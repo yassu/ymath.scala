@@ -1,4 +1,3 @@
 package ymath.number
 
-case class YInt(n: Int) {
-}
+case class YInt(n: Int)
