@@ -1,7 +1,7 @@
 package ymath.number
 
 import ymath.CastImplicits._
-import math.{sqrt, round}
+import math.{sqrt, round, floor}
 
 case class YInt(n: Int) {
   def gcd(other: YInt): Int =
@@ -17,6 +17,13 @@ case class YInt(n: Int) {
       other
     else
         other.gcd(n % other.n)
+
+  def maxSquare: Option[Int] = {
+    val candidate = round(floor(sqrt(n))).toInt
+    if (n < 0) None
+    else if ((candidate + 1) * (candidate + 1) == n) Some(candidate + 1)
+    else Some(candidate)
+  }
 
   def isSquare: Boolean = {
     val candidate = round(sqrt(n))

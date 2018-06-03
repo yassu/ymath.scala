@@ -21,6 +21,26 @@ class YIntSpec extends FlatSpec with Matchers {
     YInt(32).gcd(YInt(-4)) shouldEqual(4)
   }
 
+  // maxSquare
+  "MaxSquare of -1" should "None" in {
+    YInt(-1).maxSquare shouldEqual None
+  }
+  "maxSquare of 0" should "0" in {
+    YInt(0).maxSquare shouldEqual Some(0)
+  }
+  "maxSquare of 1" should "1" in {
+    YInt(1).maxSquare shouldEqual Some(1)
+  }
+  "maxSquare of 2" should "1" in {
+    YInt(2).maxSquare shouldEqual Some(1)
+  }
+  "maxSquare of 3" should "1" in {
+    YInt(3).maxSquare shouldEqual Some(1)
+  }
+  "maxSquare of 4" should "1" in {
+    YInt(4).maxSquare shouldEqual Some(2)
+  }
+
   // isSquare
   "YInt instance" should "be able to compute isSquare" in {
     YInt(-1).isSquare shouldEqual(false)
